@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /the-food-experience/
+Disallow: /local-labels-global-flavours/
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php

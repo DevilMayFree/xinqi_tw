@@ -1,0 +1,48 @@
+(function ($) {
+  $(document).ready(function () {
+		$('.section-funds .fl-module-callout .fl-callout-text').matchHeight();
+	});
+
+	$(window).on('load', function () {
+	
+		if ( ! Cookies.get('pdisclaimer')) {
+			
+			doms = location.protocol + "//" + location.host;
+		
+			$.ajax({
+				url: doms + '/wp-json/wp/v2/pages/903',
+				method: 'GET',
+				beforeSend: function (xhr) {
+					// Set nonce here
+					xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
+				},
+				data: {
+					action: 'ajax_action',
+					postid: $(this).data('id'),
+					//$(this).data() works because it's a standard AJAX call
+				},
+				success: function (data) {
+					console.log(data);
+					$.magnificPopup.open({
+						type: 'inline',
+						modal: 'true',
+						items: {
+							src:
+								'<div id="disclaimer-popup" class="white-popup"><h2>重要声明</h2><div class="entry-content">' +
+								data.content.rendered +
+								'</div><div class="entry-buttons"><a href="#" class="button button-close">接受</a></div></div>',
+						},
+					});
+				},
+			});
+			
+		}
+		
+	});
+	$(document).on('click', 'a.button-close', function (e) {
+		e.preventDefault;
+		$.magnificPopup.close();
+		console.log('Close');
+		Cookies.set('pdisclaimer', true, {expires: 1});
+	});
+})(jQuery);

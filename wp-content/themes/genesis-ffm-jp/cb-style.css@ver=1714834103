@@ -1,0 +1,561 @@
+/*
+Theme Name: Fullerton Fund Management
+Theme URI: https://www.fullertonfund.com
+Version: 1.10.22.1
+Description: The ChillyBin child theme that can be used as a starting point for custom development.
+Author: ChillyBin Web Design
+
+Author URI: https://chillybin.com.sg
+template: bb-theme
+*/
+
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Book.woff2") format("woff2"),
+	url("fonts/Gotham-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-BookIta.woff2") format("woff2"),
+	url("fonts/Gotham-BookIta.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Medium.woff2") format("woff2"),
+	url("fonts/Gotham-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Bold.woff2") format("woff2"),
+	url("fonts/Gotham-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("fonts/Gotham-Black.woff2") format("woff2"),
+	url("fonts/Gotham-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+html.admin-bar-showing {
+  margin-top: 2em;
+}
+
+* html.admin-bar-showing body {
+  margin-top: 2em;
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #fff;
+  color: #66616b;
+  font-family: "system-ui", -apple-system, BlinkMacSystemFont,
+	"Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1d1c1e;
+  font-family: "system-ui", -apple-system, BlinkMacSystemFont,
+	"Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+	"Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+a {
+  color: #ef6a00;
+  text-decoration: underline;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+a:focus,
+a:hover {
+  color: #1d1c1e;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+ol,
+ul {
+  overflow: initial;
+  margin: 0;
+  padding: 0;
+}
+
+ol li,
+ul li {
+  list-style-type: none;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 1.5em;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+iframe {
+  border: none;
+}
+
+hr {
+  clear: both;
+  margin: 1.5em 0;
+  border: none;
+  border-collapse: collapse;
+  border-top: 1px solid #ddd;
+}
+
+.fl-rich-text ol,
+.fl-rich-text ul {
+  margin: 0 0 1.5em;
+  line-height: 1.5;
+  overflow: hidden;
+  padding-left: 2.5em;
+}
+
+.fl-rich-text ol ol,
+.fl-rich-text ol ul,
+.fl-rich-text ul ul,
+.fl-rich-text ul ol {
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+  font-size: 1em;
+}
+
+.fl-rich-text ol > li {
+  list-style-type: decimal;
+}
+
+.fl-rich-text ul > li {
+  list-style-type: disc;
+}
+
+.fl-rich-text blockquote {
+  margin: 0;
+}
+
+.section-header .section-menu {
+  max-width: 50px;
+  margin-left: -70px;
+}
+.section-header .uabb-creative-menu-mobile-toggle.hamburger {
+  padding: 3px 0 3px;
+}
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-svg-container {
+  padding: 0;
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-svg-container
+  rect {
+  fill: #fff;
+}
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-svg-container:hover
+  rect {
+  fill: #f7f7f7;
+}
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-hamburger-menu-top,
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-hamburger-menu-middle,
+.section-header
+  .uabb-creative-menu-mobile-toggle.hamburger
+  .uabb-hamburger-menu-bottom {
+  height: 5px;
+}
+
+.fl-theme-builder-header-shrink .fl-row-content-wrap {
+	background: #000;
+}
+.fl-theme-builder-header-shrink #menu-area-drop-down .sub-menu {
+	background: #000;
+}
+
+/* Navigation - Popup
+------------------------------------ */
+
+body.fl-theme-builder-header.fl-builder-edit header.fl-builder-content {
+	background: #1d1c1e;
+}
+
+.ffm-reveal-in-bb-edit .fl-module-content {
+	margin: 0;
+}
+
+body.fl-builder-edit .ffm-reveal-in-bb-edit  {
+	padding: 0 20px;
+	background-color: rgba(245,84,66,0.1);
+	opacity: .5;
+}
+body.fl-builder-edit .ffm-reveal-in-bb-edit::before {
+	content: "Module hidden in frontend";
+	color: #f55442;
+}
+
+/* SN- Icons
+------------------------------------ */
+
+.ffm-left-icon, 
+.uabb-content-wrap .section .ffm-left-icon {
+	position: relative;
+	margin-bottom: 1em;
+	padding-left: 40px;
+}
+
+.ffm-left-icon::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 22px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+	margin-right: 10px;
+}
+
+.ffm-left-icon.ffm-location::before {
+	background-image: url("images/icon-map-purple.svg");
+}
+.ffm-left-icon.ffm-phone::before {
+	background-image: url("images/icon-telephone-purple.svg");
+}
+.ffm-left-icon.ffm-fax::before {
+	background-image: url("images/icon-telephone-purple.svg");
+}
+.ffm-left-icon.ffm-email::before {
+	background-image: url("images/icon-email-purple.svg");
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 560px) {
+	.rmg-left-icon {
+		display: block;
+		margin-bottom: .75em;
+	}
+}
+
+
+/* Footer
+------------------------------------ */
+
+.footer-right p {
+  text-align: right;
+}
+
+.footer-right a.chillybin {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-bottom: 0;
+  filter: grayscale(100%);
+  background-image: url(images/cb.svg);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+  vertical-align: top;
+  transform: scale(1, 1);
+}
+
+.footer-right a.chillybin:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+}
+
+/* SN - Featured Funds
+------------------------------------ */
+
+.section-funds
+  .uabb-blog-posts-grid
+  > div:nth-child(1)
+  .uabb-blog-posts-shadow {
+  background: rgba(255, 255, 255, 1);
+  border-bottom: 2px solid #1d1c1e;
+}
+
+.section-funds
+  .uabb-blog-posts-grid
+  > div:nth-child(1)
+  .uabb-blog-posts-shadow
+  h4
+  a {
+  color: #ef6a00;
+}
+
+.section-funds .uabb-blog-posts-grid > div .uabb-blog-posts-shadow {
+  background: rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid transparent;
+  min-height: 340px;
+}
+
+.section-funds .uabb-blog-posts-grid:hover > div .uabb-blog-posts-shadow,
+.section-funds
+  .uabb-blog-posts-grid:hover
+  > div:nth-child(1)
+  .uabb-blog-posts-shadow {
+  border-bottom: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.section-funds .uabb-blog-posts-grid:hover > div .uabb-blog-posts-shadow h4 a,
+.section-funds
+  .uabb-blog-posts-grid:hover
+  > div:nth-child(1)
+  .uabb-blog-posts-shadow
+  h4
+  a {
+  color: #1d1c1e;
+}
+
+.section-funds .uabb-blog-posts-grid > div:hover .uabb-blog-posts-shadow,
+.section-funds
+  .uabb-blog-posts-grid
+  > div:nth-child(1):hover
+  .uabb-blog-posts-shadow {
+  background: rgba(255, 255, 255, 1) !important;
+  border-bottom: 2px solid #1d1c1e;
+}
+
+.section-funds .uabb-blog-posts-grid > div:hover .uabb-blog-posts-shadow h4 a,
+.section-funds
+  .uabb-blog-posts-grid
+  > div:nth-child(1):hover
+  .uabb-blog-posts-shadow
+  h4
+  a {
+  color: #ef6a00;
+}
+
+.section-funds .uabb-blog-posts-grid h4 {
+  position: relative;
+  margin-top: 20px;
+}
+.section-funds .uabb-blog-posts-grid h4:before {
+  display: block;
+  position: relative;
+  top: -20px;
+  content: "";
+  border-bottom: 2px solid #1d1c1e;
+  width: 2em;
+}
+
+.section-funds .uabb-blog-posts-grid .uabb-blog-posts-description {
+  font-size: 14px;
+}
+
+#menu-main-menu .astm-search-menu {
+  top: 5px;
+  border-right: 1px solid #ccc;
+}
+
+/* SN - Capabilities
+------------------------------------ */
+.capabilties-sidebar {
+	background: #eae8ed
+}
+
+.capabilities-row .capabilties-sidebar .fl-rich-text ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 !important;
+}
+
+.capabilties-sidebar p {
+	font-weight: 500;
+	margin-bottom: 20px;
+}
+
+.capabilities-row .fl-rich-text ul {
+	padding-left: 1em;
+}
+
+.capabilities-row capabilities-cn p {
+	padding-left: 2em;
+}
+
+/* SN - Module UABB Tables
+------------------------------------ */
+.uabb-table .table-heading-0,
+.uabb-table .table-body-td:first-of-type {
+	background: #2f2250;
+	color: #fff;
+	vertical-align: top;
+}
+
+/* SN - Multisite / Institutional Capabilities
+------------------------------------ */
+
+.section-funds .fl-module-callout .fl-module-content {
+  background: rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid transparent;
+  min-height: 320px;
+  position: relative;
+}
+
+.section-funds .fl-module-callout.active .fl-module-content { 
+  background: rgba(255, 255, 255, 1);
+  border-bottom: 2px solid #1d1c1e;
+}
+
+.section-funds.section-institutional .fl-module-callout .fl-module-content  {
+	padding: 40px;
+	min-height: 500px;
+}
+
+.section-funds .fl-module-callout .fl-module-content h3 a  {
+  color: #1d1c1e;
+}
+
+.section-funds .fl-module-callout.active .fl-module-content h3 a {
+  color: #ef6a00;
+}
+
+.section-funds .fl-module-callout .fl-module-content h3 {
+  position: relative;
+  margin-top: 20px;
+}
+
+.section-funds .fl-module-callout .fl-module-content .fl-callout-text  {
+  font-size: 14px;
+}
+
+.section-funds .fl-module-callout .fl-module-content .fl-callout-cta-link {
+	color: #1d1c1e;
+	max-width: calc(100% - 80px)
+}
+
+.section-funds .fl-module-callout.active .fl-module-content .fl-callout-cta-link {
+	font-weight: 500;
+	color: #ef6a00;
+}
+
+.section-funds .fl-module-callout .fl-module-content h3:before {
+  display: block;
+  position: relative;
+  top: -20px;
+  content: "";
+  border-bottom: 2px solid #1d1c1e;
+  width: 2em;
+}
+
+.section-funds .fl-module-callout:hover .fl-module-content {
+  background: rgba(255, 255, 255, 1) !important;
+  border-bottom: 2px solid #1d1c1e;
+}
+
+/* SN - Disclaimer popup
+------------------------------------ */
+.white-popup {
+	position: relative;
+	background: #fff;
+	padding: 40px;
+	width: auto;
+	max-width: 80vw;
+	width: 640px;
+	margin: 40px auto;
+}
+
+.white-popup div.entry-content {
+	max-height: 280px;
+	margin-bottom: 40px;
+	overflow: scroll;
+}
+
+.white-popup div.entry-buttons {
+	text-align: right;
+}
+
+.white-popup div.entry-buttons a {
+	background: #2f2250;
+	margin-left: 1em;
+}
+
+#disclaimer-popup h1 {
+	display: none;
+}
+
+/* SN - Kelton
+------------------------------------ */
+
+.section-cn .fl-rich-text p {
+	text-indent: 2em;
+}
+
+.capabilties-sidebar .fl-rich-text p {
+	text-indent: 0;
+}
